@@ -80,6 +80,62 @@ router.post('/auth/signup', function(req, res, next) {
   });
 });
 
+router.post('/auth/signin', function(req, res, next) {
+  var email = req.body.email;
+  var password = req.body.passwod;
+
+  if (!email || !password) {
+    // TODO
+    return res.status(400).json({
+      success: false,
+      message: 'Falta algún paramétro'
+    });
+  }
+
+  User.findOne({
+    email: email
+  }, function(err, user) {
+    if (err) {
+      // TODO
+      return res.status(500).json({
+        success: false,
+        message: 'Ocurrió un error'
+      });
+    }
+
+    if (!user) {
+      // TODO
+      return res.status(200).json({
+        success: false,
+        message: 'El usuario y/o la contraseña son incorrectos'
+      });
+    }
+
+    if (!user.passwordMatches(password)) {
+      // TODO
+      return res.status(200).json({
+        success: false,
+        message: 'El usuario y/o la contraseña son incorrectos'
+      });
+    }
+
+    jwt.sign({id: user._id}, process.env.JWT_SECRET, null, function(err, token) {
+      if (err) {
+        // TODO
+        return res.status(500).json({
+          success: true,
+          message: 'Ocurrió un error'
+        });
+      }
+
+      res.status(200).json({
+        success: true,
+        accessToken: token
+      });
+    });
+  });
+});
+
 app.use(router);
 
 app.listen(process.env.PORT, process.env.IP);
