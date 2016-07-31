@@ -1,0 +1,17 @@
+{
+  "name": "hackathon-infinitum",
+  "version": "0.1.0",
+  "description": "Proyecto para el hackathon de infinitum",
+  "main": "server.js",
+  "repository": "git@github.com:chilangolabs/Hackathon-Infinitum.git",
+  "author": "Chilango Labs",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "node-wit": "^4.0.0",
+    "request": "^2.74.0",
+    "socket.io": "~0.9.14"
+  }
+}
