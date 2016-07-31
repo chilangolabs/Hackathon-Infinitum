@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 let bodyParser = require('body-parser');
 var fb = require("./messenger.js");
-var {callSendAPI, sendTextMessage, receivedMessage} = fb;
+var {sendTextMessage, receivedMessage} = fb;
 
 app.use(bodyParser.json());
 
@@ -28,23 +28,15 @@ router.route('/bot/webhook')
   })
   .post(function(req, res, next) {
     var data = req.body;
-    console.log(req.method, req.originalUrl, JSON.stringify(data));
     if (data.object === 'page') {
       data.entry.forEach(function(pageEntry) {
         var pageID = pageEntry.id;
         var timeOfEvent = pageEntry.time;
         
         pageEntry.messaging.forEach(function(messagingEvent) {
-          if (messagingEvent.optin) {
-            // receivedAuthentication(messagingEvent);
-          } else if (messagingEvent.message && !messagingEvent.message.is_echo) {
+          if (messagingEvent.message && !messagingEvent.message.is_echo) {
+            console.log(req.method, req.originalUrl, messagingEvent.message.text);
             receivedMessage(messagingEvent);
-          } else if (messagingEvent.delivery) {
-            // receivedDeliveryConfirmation(messagingEvent);
-          } else if (messagingEvent.postback) {
-            // receivedPostback(messagingEvent);
-          } else {
-            console.log("Webhook received unknown messagingEvent: ", messagingEvent);
           }
         });
       });

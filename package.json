@@ -1,15 +1,18 @@
 {
-  "name": "hackathon-infinitum",
-  "version": "0.1.0",
-  "description": "Proyecto para el hackathon de infinitum",
+  "name": "chat-example",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
   "main": "server.js",
-  "repository": "git@github.com:chilangolabs/Hackathon-Infinitum.git",
-  "author": "Chilango Labs",
+  "repository": "",
+  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
   "dependencies": {
     "async": "~0.2.8",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.7",
+    "mongoose": "^4.5.7",
     "node-wit": "^4.0.0",
     "request": "^2.74.0",
     "socket.io": "~0.9.14"
