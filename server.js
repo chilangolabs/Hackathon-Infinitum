@@ -4,8 +4,10 @@ console.log(`Version: ${process.version}`);
 var express = require('express');
 var app = express();
 let bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
 var fb = require("./messenger.js");
 var {sendTextMessage, receivedMessage} = fb;
+var User = require('./models/User');
 
 app.use(bodyParser.json());
 
@@ -44,6 +46,39 @@ router.route('/bot/webhook')
     
     res.sendStatus(200);
   });
+
+router.post('/auth/signup', function(req, res, next) {
+  var email = req.body.email;
+  var password = req.body.passwod;
+
+  if (!email || !password) {
+    // TODO
+    return res.status(400).json({
+      success: false,
+      message: 'Falta algún paramétro'
+    });
+  }
+  
+  var candidateUser = new User({
+    email: email,
+    passwod: password
+  });
+  
+  candidateUser.save(function(err) {
+    if (err) {
+      // TODO
+      return res.status(500).json({
+        success: false,
+        message: 'Ocurruó un error'
+      });
+    }
+    
+    res.status(201).json({
+      success: true,
+      message: 'Usuario creado correctamente'
+    });
+  });
+});
 
 app.use(router);
 
