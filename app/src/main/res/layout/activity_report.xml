@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bggray"
+    tools:context="com.chilangolabs.reporteciudadano.ReportActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/imgHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/reporte_fuga_agua" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-3dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/wavegray" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="-100dp"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+            android:id="@+id/txtReportTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FUGA DE AGUA"
+            android:textColor="@color/darkgray"
+            android:textSize="28sp"
+            app:font="SemiBold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:drawableLeft="@drawable/map_marker"
+                android:drawableStart="@drawable/map_marker"
+                android:gravity="center_vertical"
+                android:text="CHIHUAHUA 230, CIUDAD DE MEXICO"
+                android:textColor="@color/graytext" />
+
+            <com.like.LikeButton
+                android:id="@+id/star_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:icon_size="25dp"
+                app:icon_type="thumb" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/swift_gray" />
+
+        <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="ESTATUS DEL REPORTE"
+            android:textColor="@color/darkgray"
+            app:font="SemiBold" />
+
+        <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Su reporte ha sido entregado a la dependencia correspondiente"
+            android:textColor="@color/graytext"
+            android:textSize="14sp"
+            app:font="Light" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:max="5"
+            android:progress="2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="REPORTADO"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                app:font="Light" />
+
+            <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="REVISADO"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                app:font="Light" />
+
+            <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="EN TRANSCURSO"
+                android:textSize="12sp"
+                app:font="Light" />
+
+            <com.chilangolabs.reporteciudadano.customelements.MontserratTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="FINALIZADO"
+                android:textSize="12sp"
+                app:font="Light" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/swift_gray" />
+
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:center_latitude="19.431348"
+            app:center_longitude="-99.136646"
+            app:style_url="@string/style_light"
+            app:zoom="15" />
+
+    </LinearLayout>
+
+</RelativeLayout>

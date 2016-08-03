@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Visü</string>
+    <string name="facebook_app_id">1258094310868088</string>
+    <string name="fb_login_protocol_scheme">fb1258094310868088</string>
+    <string name="login_with_email">INICIAR SESION CON EMAIL</string>
+    <string name="logout_fb_txt">SALIR</string>
+    <string name="login_fb_txt">INICIAR SESION CON FACEBOOK</string>
+    <string name="mapbox_token">pk.eyJ1IjoiZ29ycm90b3dpIiwiYSI6ImNpcjlvaG90cTAxMnZnZG5rdHZqeTV3dmUifQ.Eiddb4ZQkVurPZcf6xI7Eg</string>
+
+</resources>

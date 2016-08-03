@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "74716904466",
+    "firebase_url": "https://reporteciudadano-6be6f.firebaseio.com",
+    "project_id": "reporteciudadano-6be6f",
+    "storage_bucket": "reporteciudadano-6be6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74716904466:android:26147a27ea43317c",
+        "android_client_info": {
+          "package_name": "com.chilangolabs.reporteciudadano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74716904466-hn3vqe0hq5mnqgtu3pvmdcpdu752797f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtBT0lwrFIT5G_BuqDnnc671EnThxltvc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

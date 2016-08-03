@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chilangolabs.reporteciudadano.MapActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        app:center_latitude="19.431348"
+        app:center_longitude="-99.136646"
+        app:style_url="@string/style_light"
+        app:zoom="15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/colorPrimary">
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26sp" />
+
+    <com.sergiocasero.revealfab.RevealFAB
+        android:id="@+id/reveal_fab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fab_color="@color/colorAccent"
+        app:fab_icon="@drawable/rocket"
+        app:reveal_color="@color/colorAccent" />
+
+</RelativeLayout>
